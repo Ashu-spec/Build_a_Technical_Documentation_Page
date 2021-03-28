@@ -4,32 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend&family=Montserrat:ital@1&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
-<body>
+<body>  
 
     <nav id="navbar">
-        <header>ETHEREUM DEVELOPMENT DOCUMENTATION</header>
+        <header><h4>ETHEREUM DOCUMENTATION</h4></header>
+        <a href="#WHAT_IS_A_BLOCKCHAIN?" class="nav-link"><p>WHAT IS A BLOCKCHAIN?</p></a> 
+        <a href="#WHAT_IS_ETHEREUM?" class="nav-link"><p>WHAT IS ETHEREUM?</p></a> 
+        <a href="#WHAT_IS_ETHER?" class="nav-link"><p>WHAT IS ETHER?</p></a> 
+        <a href="#WHAT_ARE_DAPPS?" class="nav-link"><p>WHAT ARE DAPPS?</p></a> 
+        <a href="#Blockchain" class="nav-link"><p>Blockchain</p></a> 
+        <a href="#ETH" class="nav-link"><p>ETH</p></a> 
+        <a href="#EVM" class="nav-link"><p>EVM</p></a>  
+        <a href="#NODES" class="nav-link"><p>Nodes</p></a> 
+        <a href="#Accounts" class="nav-link"><p>Accounts</p></a> 
+        <a href="#Transactions" class="nav-link"><p>Transactions</p></a>
+        <a href="#Blocks" class="nav-link"><p>Blocks</p></a> 
+        <a href="#Smart_contracts" class="nav-link"><p>Smart contracts</p></a> 
+      
 
-        <a href="" class="nav-link">WHAT IS A BLOCKCHAIN?</a>
-        <a href="" class="nav-link">WHAT IS ETHEREUM?</a>
-        <a href="" class="nav-link">WHAT IS ETHER?</a>
-        <a href="" class="nav-link">WHAT ARE DAPPS?</a>
-        <a href="" class="nav-link">Blockchain</a>
-        <a href="" class="nav-link">ETH</a>
-        <a href="" class="nav-link">EVM</a>
-        <a href="" class="nav-link">Nodes</a>
-        <a href="" class="nav-link">Accounts</a>
-        <a href="" class="nav-link">Transactions</a>
-        <a href="" class="nav-link">Blocks</a>
-        <a href="" class="nav-link">Smart contracts</a>
+        <br>
 
     </nav>
 
     <main id="main-doc"> 
-     
     <section class="main-section" id="WHAT_IS_A_BLOCKCHAIN?">
-        <header>WHAT IS A BLOCKCHAIN?</header>
+        <header><h1>WHAT IS A BLOCKCHAIN?</h1></header>
         <p>A blockchain is best described as a public database that is updated and shared across many computers in a network.</p>
         <p>"Block" refers to the fact that data and state is stored in sequential batches or "blocks". If you send ETH to someone else, the transaction data needs to be added to a block for it to be successful.</p>
         <p>"Chain" refers to the fact that each block cryptographically references its parent. A block's data cannot be changed without changing all subsequent blocks, which would require the consensus of the entire network.</p>
@@ -37,73 +41,69 @@
         <p>Ethereum currently uses a proof-of-work consensus mechanism. This means that anyone who wants to add new blocks to the chain must solve a difficult puzzle that you need a lot of computing power to work on. Solving the puzzle "proves" that you have spent the computational resources. Doing this is known as mining. Mining can be trial and error but adding a block successfully is rewarded in ETH. On the other hand, submitting fraudulent blocks is not an attractive option considering the resources you've spent on producing the block.</p>
         <p>New blocks are broadcast to the nodes in the network, checked and verified, updating the state for everyone.</p>
         <p>So to summarise, when you send ETH to someone, the transaction must be mined and included in a new block. The updated state is then shared with the entire network. More on the details below.</p>
-        <p>Watch Austin walk you through blockchains:</p>
+        <div id="iframe-div">
+        <ul><li>Watch Austin walk you through blockchains</li></ul>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/zcX7OJ-L8XQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
     </section>
+    <hr>
     <section class="main-section" id="WHAT_IS_ETHEREUM?">
-        <header>WHAT IS ETHEREUM?</header>
+        <header><h1>WHAT IS ETHEREUM?</h1></header>
         <p>In the Ethereum universe, there is a single, canonical computer (called the Ethereum Virtual Machine, or EVM) whose state everyone on the Ethereum network agrees on. Everyone who participates in the Ethereum network (every Ethereum node) keeps a copy of the state of this computer. Additionally, any participant can broadcast a request for this computer to perform arbitrary computation. Whenever such a request is broadcast, other participants on the network verify, validate, and carry out (“execute”) the computation. This causes a state change in the EVM, which is committed and propagated throughout the entire network.</p>
         <p>Requests for computation are called transaction requests; the record of all transactions as well as the EVM’s present state is stored in the blockchain, which in turn is stored and agreed upon by all nodes.</p>
         <p>Cryptographic mechanisms ensure that once transactions are verified as valid and added to the blockchain, they can’t be tampered with later; the same mechanisms also ensure that all transactions are signed and executed with appropriate “permissions” (no one should be able to send digital assets from Alice’s account, except for Alice herself).</p>
-    </section>
+    </section>  <hr>
     <section class="main-section" id="WHAT_IS_ETHER?">
-        <header>WHAT IS ETHER?</header>
+        <header><h1>WHAT IS ETHER?</h1></header>
         <p>The purpose of Ether, the cryptocurrency, is to allow for the existence of a market for computation. Such a market provides an economic incentive for participants to verify/execute transaction requests and to provide computational resources to the network.</p>
         <p>Any participant who broadcasts a transaction request must also offer some amount of ether to the network, as a bounty to be awarded to whoever eventually does the work of verifying the transaction, executing it, committing it to the blockchain, and broadcasting it to the network.</p>
         <p>The amount of ether paid is a function of the length of the computation. This also prevents malicious participants from intentionally clogging the network by requesting execution of infinite loops or resource-intense scripts, as these actors will be continually charged.</p>
-    </section>
+    </section>  <hr>
     <section class="main-section" id="WHAT_ARE_DAPPS?">
-        <header>WHAT ARE DAPPS?</header>
+        <header><h1>WHAT ARE DAPPS?</h1></header>
         <p>In practice, participants don’t write new code every time they want to request a computation on the EVM. Rather, application developers upload programs (reusable snippets of code) into EVM storage, and then users make requests for the execution of these code snippets with varying parameters. We call the programs uploaded to and executed by the network smart contracts.</p>
         <p>At a very basic level, you can think of a smart contract like a sort of vending machine: a script which, when called with certain parameters, performs some actions or computation if certain conditions are satisfied. For example, a simple vendor smart contract could create and assign ownership of a digital asset if the caller sends ether to a specific recipient.</p>
         <p>Any developer can create a smart contract and make it public to the network, using the blockchain as its data layer, for a fee paid to the network. Any user can then call the smart contract to execute its code, again for a fee paid to the network</p>
         <p>Thus, with smart contracts, developers can build and deploy arbitrarily complex user-facing apps and services: marketplaces, financial instruments, games, etc.</p>
-    </section>
+    </section>  <hr>
     <section class="main-section" id="Blockchain">
-        <header>Blockchain</header>
+        <header><h1>Blockchain</h1></header>
         <p>The sequence of all blocks that have been committed to the Ethereum network in the history of the network. So-named because each block contains a reference to the previous block, which helps us maintain an ordering over all blocks (and thus over the precise history).</p>
-    </section>
+    </section>  <hr>
     <section class="main-section" id="ETH">
-        <header>ETH</header><p>The native cryptocurrency of Ethereum. Users pay ether to other users to have their code execution requests fulfilled.</p>
-    </section>
+        <header><h1>ETH</h1></header><p>The native cryptocurrency of Ethereum. Users pay ether to other users to have their code execution requests fulfilled.</p>
+    </section>  <hr>
     <section class="main-section" id="EVM">
-        <header>EVM</header><p>The Ethereum Virtual Machine is the global virtual computer whose state every participant on the Ethereum network stores and agrees on. Any participant can request the execution of arbitrary code on the EVM; code execution changes the state of the EVM</p>
-    </section>
+        <header><h1>EVM</h1></header><p>The Ethereum Virtual Machine is the global virtual computer whose state every participant on the Ethereum network stores and agrees on. Any participant can request the execution of arbitrary code on the EVM; code execution changes the state of the EVM</p>
+    </section>  <hr>
     <section class="main-section" id="NODES"> 
-        <header>Nodes</header><p>The real-life machines which are storing the EVM state. Nodes communicate with each other to propagate information about the EVM state and new state changes. Any user can also request execution of code by broadcasting code execution request from a node. The Ethereum network itself is the aggregate of all Ethereum nodes and their communications</p>
-    </section>
+        <header><h1>Nodes</h1></header><p>The real-life machines which are storing the EVM state. Nodes communicate with each other to propagate information about the EVM state and new state changes. Any user can also request execution of code by broadcasting code execution request from a node. The Ethereum network itself is the aggregate of all Ethereum nodes and their communications</p>
+    </section>  <hr>
     <section class="main-section" id="Accounts">
-        <header>Accounts</header><p>Where ether is stored. Users can initialize accounts, deposit ether into the accounts, and transfer ether from their accounts to other users. Accounts and account balances are stored in a big table in the EVM; they are a part of the overall EVM state</p>
-    </section>
+        <header><h1>Accounts</h1></header><p>Where ether is stored. Users can initialize accounts, deposit ether into the accounts, and transfer ether from their accounts to other users. Accounts and account balances are stored in a big table in the EVM; they are a part of the overall EVM state</p>
+    </section>  <hr>
     <section class="main-section" id="Transactions">
-        <header>Transactions</header>
+        <header><h1>Transactions</h1></header>
         <p>A “transaction request” is the formal term for a request for code execution on the EVM, and a “transaction” is a fulfilled transaction request and the associated change in the EVM state. Any user can broadcast a transaction request to the network from a node. For the transaction request to actually affect the agreed-upon EVM state, it must be validated, executed, and “committed to the network” by some other node. Execution of any code causes a state change in the EVM; upon commitment, this state change is broadcast to all nodes in the network. Some examples of transactions:
 
             <ul>
            <li>Send X ether from my account to Alice’s account.</li>
             <li>Publish some smart contract code into EVM memory.</li>
            <li>Execute the code of the smart contract at address X in the EVM, with arguments Y.</li> 
-           <li></li>
-           <li></li>
            </ul>
         </p>
-    </section>
+    </section>  <hr>
     <section class="main-section" id="Blocks"> 
-        <header>Blocks</header>
+        <header><h1>Blocks</h1></header>
         <p>The volume of transactions is very high, so transactions are “committed” in batches, or blocks. Blocks generally contain dozens to hundreds of transactions</p>
-    </section>
+    </section>  <hr>
     <section class="main-section" id="Smart_contracts">
-        <header>Smart contracts</header>
+        <header><h1>Smart contracts</h1></header>
         <p>A reusable snippet of code (a program) which a developer publishes into EVM memory. Anyone can request that the smart contract code be executed by making a transaction request. Because developers can write arbitrary executable applications into the EVM (games, marketplaces, financial instruments, etc.) by publishing smart contracts, these are often also called dapps, or Decentralized Apps.</p>
+        <ul><li><a href="https://ethereum.org/en/whitepaper/">Ethereum Whitepaper</a></li></ul>
+        <code>console.log("If");</code>  <code>console.log("You")</code> <code>console.log("Want");</code> <code>console.log("To");</code><code>console.log("Lern_More");</code> <code>console.log("<a href="https://ethereum.org/en/">Click-Hear"</a>);</code>
     </section>
-    <section class="main-section" id="FURTHER_READING">
-        <header>FURTHER READING</header>
-        <a href="https://ethereum.org/en/whitepaper/">Ethereum Whitepaper</a>
-    </section>    
-
     </main>
-    
-
- 
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </body>
 </html>
